@@ -3,6 +3,18 @@
   <router-view/>
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue';
+import store from './store';
+
+export default defineComponent({
+  setup() {
+    store.dispatch('getSettings');
+    store.dispatch('getRooms');
+  },
+});
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -12,16 +24,19 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+body {
+  margin: 0;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+h1 {
+  font-size: 26px;
+  height: 31px;
+  margin: 10px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+h2 {
+  font-size: 20px;
+  height: 23px;
+  margin: 5px;
 }
 </style>
