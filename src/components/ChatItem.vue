@@ -41,7 +41,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .history-item {
-  background-color: #33393f;
+  background-color: var(--gray-background-color);
   max-width: 50vw;
   border-radius: 25px;
   margin: 10px;
@@ -49,16 +49,16 @@ export default defineComponent({
   width: 100%;
 
   &-text {
-    color: #e9eaea;
+    color: var(--white-color);
   }
 
   &-date {
-    color: #7f8a91;
+    color: var(--gray-color);
   }
 
   &-output {
     margin-left: auto;
-    background-color: #2a2f33;
+    background-color: var(--output-background-color);
   }
 }
 </style>

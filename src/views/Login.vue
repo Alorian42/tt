@@ -50,7 +50,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  color: #e9eaea;
+  color: var(--white-color);
 
   .login {
     &-input {
@@ -69,16 +69,17 @@ export default defineComponent({
 
     &-button {
       background-color: #0096ff;
-      color: #ffffff;
+      color: var(--white-color);
       font-size: 26px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      padding: 10px;
 
       margin-top: 15px;
 
       &:disabled {
-        background-color: #001829;
+        background-color: var(--dark-blue-background-color);
         cursor: not-allowed;
       }
     }

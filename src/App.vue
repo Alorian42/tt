@@ -21,25 +21,35 @@ export default defineComponent({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+
+  color: var(--light-background-color);
 }
 
 body {
+  --light-background-color: #2c3e50;
+  --dark-background-color: #282e33;
+  --dark-blue-background-color: #19232b;
+  --black-background-color: #181c1f;
+  --gray-background-color: #33393f;
+  --output-background-color: #2a2f33;
+  --white-color: #e9eaea;
+  --gray-color: #7f8a91;
+
   margin: 0;
-  background-color: #282e33;
+  background-color: var(--dark-background-color);
 }
 
 h1 {
   font-size: 26px;
   height: 31px;
   margin: 10px;
-  color: #e9eaea;
+  color: var(--white-color);
 }
 
 h2 {
   font-size: 20px;
   height: 23px;
   margin: 5px;
-  color: #e9eaea;
+  color: var(--white-color);
 }
 </style>

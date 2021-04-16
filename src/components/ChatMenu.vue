@@ -44,7 +44,7 @@ export default defineComponent({
 
     &:hover {
       transition: .3s;
-      background-color: #181c1f;
+      background-color: var(--black-background-color);
     }
   }
 }

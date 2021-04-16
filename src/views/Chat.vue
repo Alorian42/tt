@@ -65,11 +65,11 @@ export default defineComponent({
       max-height: 100%;
       overflow: auto;
 
-      background-color: #282e33;
-      color: #eeecec;
+      background-color: var(--dark-background-color);
+      color: var(--white-color);
 
       &-header {
-        background-color: #181c1f;
+        background-color: var(--black-background-color);
         font-size: 14px;
         padding: 15px;
 
@@ -79,7 +79,7 @@ export default defineComponent({
 
           &:hover {
             transition: .3s;
-            background-color: #19232b;
+            background-color: var(--dark-blue-background-color);
 
           }
         }
@@ -91,7 +91,7 @@ export default defineComponent({
       max-height: 100%;
       overflow: auto;
 
-      background-color: #18191d;
+      background-color: var(--black-background-color);
 
       &-empty {
         color: #e9eaea;
@@ -112,8 +112,8 @@ export default defineComponent({
     height: 140px;
     resize: none;
 
-    background-color: #282e33;
-    color: #eeecec;
+    background-color: var(--dark-background-color);
+    color: var(--white-color);
 
     border: none;
     outline: none;
