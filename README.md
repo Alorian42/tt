@@ -1,29 +1,8 @@
-# tada-team
+# Tada Team
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## TODO List
+1) Сделать ридми
+2) Получение сообщений
+3) Отправка сообщений
+4) Создание комнат
+5) Лоадер
