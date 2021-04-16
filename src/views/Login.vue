@@ -50,6 +50,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  color: #e9eaea;
 
   .login {
     &-input {

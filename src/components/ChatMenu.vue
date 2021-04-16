@@ -39,11 +39,12 @@ export default defineComponent({
   &-item {
     transition: .3s;
     cursor: pointer;
-    padding: 20px 10px;
+    padding: 10px 5px;
+    font-size: 12px;
 
     &:hover {
       transition: .3s;
-      border: 1px solid gray;
+      background-color: #181c1f;
     }
   }
 }

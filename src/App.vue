@@ -26,17 +26,20 @@ export default defineComponent({
 
 body {
   margin: 0;
+  background-color: #282e33;
 }
 
 h1 {
   font-size: 26px;
   height: 31px;
   margin: 10px;
+  color: #e9eaea;
 }
 
 h2 {
   font-size: 20px;
   height: 23px;
   margin: 5px;
+  color: #e9eaea;
 }
 </style>

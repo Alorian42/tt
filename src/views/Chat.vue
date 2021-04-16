@@ -3,13 +3,14 @@
     <h2>Здравствуй, {{ login }}</h2>
     <div class="wrapper">
       <div class="chat-menu">
-        <h3>Комнаты:</h3>
+        <div class="chat-menu-header">Комнаты:</div>
         <chat-menu :rooms="rooms" @select="selectRoom"></chat-menu>
       </div>
       <div class="chat-items">
-        <template v-if="!selectedRoom">
+        <div class="chat-items-empty" v-if="!selectedRoom">
           Выберите комнату для общения
-        </template>
+        </div>
+        <chat-items v-else :history="history"></chat-items>
       </div>
     </div>
   </div>
@@ -17,12 +18,16 @@
 
 <script lang="ts">
 import store from '@/store';
-import { computed, defineComponent } from 'vue';
+import {
+  computed, defineComponent,
+} from 'vue';
 import ChatMenu from '@/components/ChatMenu.vue';
+import ChatItems from '@/components/ChatItems.vue';
 
 export default defineComponent({
   components: {
     ChatMenu,
+    ChatItems,
   },
   setup() {
     const login = computed(() => store.getters.login);
@@ -51,16 +56,33 @@ export default defineComponent({
   .chat {
     &-menu {
       width: 25%;
-      height: 100%;
+      max-height: 100%;
+      overflow: auto;
 
-      background-color: yellow; // @TODO remove
+      background-color: #282e33;
+      color: #eeecec;
+
+      &-header {
+        background-color: #181c1f;
+        font-size: 14px;
+        padding: 15px;
+      }
     }
 
     &-items {
       width: 75%;
-      height: 100%;
+      max-height: 100%;
+      overflow: auto;
 
-      background-color: purple; // @TODO remove
+      background-color: #18191d;
+
+      &-empty {
+        color: #e9eaea;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
     }
   }
 }
