@@ -1,14 +1,11 @@
 <template>
-  <div class="history-wrapper">
-    <chat-item
-      v-for="(message, index) in history"
-      :key="`${message.text}__${index}`"
-      class="history-item"
-      :text="message.text"
-      :date="message.created"
-      :output="login === message.sender.username"
-    ></chat-item>
-  </div>
+  <chat-item
+    v-for="(message, index) in history"
+    :key="`${message.text}__${index}`"
+    :text="message.text"
+    :date="message.created"
+    :output="login === message.sender.username"
+  ></chat-item>
 </template>
 
 <script lang="ts">
@@ -36,18 +33,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.rooms {
-  &-item {
-    transition: .3s;
-    cursor: pointer;
-    padding: 20px 10px;
-
-    &:hover {
-      transition: .3s;
-      border: 1px solid gray;
-    }
-  }
-}
-</style>

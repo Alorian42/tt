@@ -1,8 +1,9 @@
 <template>
-  <div class="about">
+  <div>
     <h2>Здравствуй, {{ login }}</h2>
     <div class="wrapper">
       <div class="chat-menu">
+        <div class="chat-menu-header chat-menu-header-create">Создать комнату</div>
         <div class="chat-menu-header">Комнаты:</div>
         <chat-menu :rooms="rooms" @select="selectRoom"></chat-menu>
       </div>
@@ -13,13 +14,16 @@
         <chat-items v-else :history="history"></chat-items>
       </div>
     </div>
+    <div class="chat-input">
+      <textarea placeholder="Введите сообщение" v-model="text"></textarea>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import store from '@/store';
 import {
-  computed, defineComponent,
+  computed, defineComponent, ref,
 } from 'vue';
 import ChatMenu from '@/components/ChatMenu.vue';
 import ChatItems from '@/components/ChatItems.vue';
@@ -34,12 +38,14 @@ export default defineComponent({
     const rooms = computed(() => store.getters.rooms);
     const selectedRoom = computed(() => store.getters.selectedRoom);
     const history = computed(() => store.getters.history);
+    const text = ref('');
 
     return {
       login,
       rooms,
       selectedRoom,
       history,
+      text,
       async selectRoom(roomName: string) {
         store.dispatch('selectRoom', roomName);
       },
@@ -51,7 +57,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .wrapper {
   display: flex;
-  height: calc(100vh - 79px); // вычитаем высоту топ-бара
+  height: calc(100vh - 79px - 150px); // вычитаем высоту верхнего и нижнего баров
 
   .chat {
     &-menu {
@@ -66,6 +72,17 @@ export default defineComponent({
         background-color: #181c1f;
         font-size: 14px;
         padding: 15px;
+
+        &-create {
+          transition: .3s;
+          cursor: pointer;
+
+          &:hover {
+            transition: .3s;
+            background-color: #19232b;
+
+          }
+        }
       }
     }
 
@@ -84,6 +101,22 @@ export default defineComponent({
         height: 100%;
       }
     }
+  }
+}
+
+.chat-input {
+  height: 150px;
+
+  textarea {
+    width: 99.6%;
+    height: 140px;
+    resize: none;
+
+    background-color: #282e33;
+    color: #eeecec;
+
+    border: none;
+    outline: none;
   }
 }
 </style>

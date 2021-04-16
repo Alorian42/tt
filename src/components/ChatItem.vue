@@ -46,6 +46,7 @@ export default defineComponent({
   border-radius: 25px;
   margin: 10px;
   padding: 5px;
+  width: 100%;
 
   &-text {
     color: #e9eaea;
